@@ -13,46 +13,46 @@
                                 <span class="embos_45"><i class="fas fa-sign-in-alt mr-1"></i>Sign In </span>
                             </a>
                         </li>
-                        <ng-container  >
+                        <ng-container>
                             <li [class]="userDetail?.details?.userId?'':'d-none'">
-                            <a href="#"><i class="ti-user pl-2"></i>{{userDetail?.details?.name}}<span class="submenu-indicator"></span></a>
-                                        <ul class="nav-dropdown nav-submenu">
-                                            <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
-                                            </ul>
-                        </li>
+                                <a href="#"><i class="ti-user pl-2"></i>{{userDetail?.details?.name}}<span class="submenu-indicator"></span></a>
+                                <ul class="nav-dropdown nav-submenu">
+                                    <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
+                                </ul>
+                            </li>
                         </ng-container>
                     </ul>
                 </div>
             </div>
             <div class="nav-menus-wrapper">
                 <ul class="nav-menu">
-                    <li><a href="/home"  routerLink="/home">Lets Go <i class="fa fa-home"></i></a></li>
+                    <li><a href="/home" routerLink="/home">Lets Go <i class="fa fa-home"></i></a></li>
                     <li><a href="/who-we-are" routerLink="/who-we-are">Who We Are?</a></li>
                     <li><a href="/trainings">Trainings</a></li>
                     <!-- <li><a href="dashboard.html">Blog</a></li> -->
                     <li><a href="/contact">Say Hello!</a></li>
-                    
-                    
-                    
+
+
+
                 </ul>
-                
+
                 <ul class="nav-menu nav-menu-social align-to-right">
-                    
-                    <li  [class]="!userDetail?.details?.userId?'':'d-none'">
+
+                    <li [class]="!userDetail?.details?.userId?'':'d-none'">
                         <a href="#" class="alio_green" data-toggle="modal" data-target="#login">
                             <i class="fas fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span>
                         </a>
                     </li>
-                    <ng-container  >
+                    <ng-container>
                         <li [class]="userDetail?.details?.userId?'':'d-none'">
-                        <a href="#"><i class="ti-user pl-2"></i>{{userDetail?.details?.name}}<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
-                                        </ul>
-                    </li>
+                            <a href="#"><i class="ti-user pl-2"></i>{{userDetail?.details?.name}}<span class="submenu-indicator"></span></a>
+                            <ul class="nav-dropdown nav-submenu">
+                                <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
+                            </ul>
+                        </li>
                     </ng-container>
                     <li class="add-listing theme-bg">
-                        <a  (click)="userLogin()" class="text-white">Book Free 1:1 </a>
+                        <a (click)="userLogin()" class="text-white">Book Free 1:1 </a>
                     </li>
                 </ul>
             </div>
@@ -63,121 +63,126 @@
 <div class="clearfix"></div>
 
 
-	<!-- Signup In Modal -->
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupmodal" aria-hidden="true">
-        <div class="modal-dialog modal-xl login-pop-form" role="document">
-            <div class="modal-content overli" id="signupnmodal">
-                <div class="modal-header">
-                    <h5 class="modal-title">Register Your Account</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<!-- Signup In Modal -->
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupmodal" aria-hidden="true">
+    <div class="modal-dialog modal-xl login-pop-form" role="document">
+        <div class="modal-content overli" id="signupnmodal">
+            <div class="modal-header">
+                <h5 class="modal-title">Register Your Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true"><i class="fas fa-times-circle"></i></span>
                     </button>
-                  </div>
-                <div class="modal-body">
-                    <div class="signup-form">
-                        <form>
-                        
-                            <div class="form-group">
-                                <label>Name</label>
-                                <div class="input-with-icon">
-                                    <input type="text" required class="form-control"  placeholder="User Name">
-                                    <i class="ti-user"></i>
-                                </div>
+            </div>
+            <div class="modal-body">
+                <div class="signup-form">
+                    <form>
+
+                        <div class="form-group">
+                            <label>Name</label>
+                            <div class="input-with-icon">
+                                <input type="text" required class="form-control" placeholder="User Name">
+                                <i class="ti-user"></i>
                             </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <div class="input-with-icon">
-                                    <input type="email" required class="form-control"  placeholder="User Email">
-                                    <i class="ti-email"></i>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <div class="input-with-icon">
+                                <input type="email" required class="form-control" placeholder="User Email">
+                                <i class="ti-email"></i>
                             </div>
-                            <div class="form-group">
-                                <label>Mobile</label>
-                                <div class="input-with-icon">
-                                    <input type="text" required class="form-control" placeholder="User Mobile Number">
-                                    <i class="ti-mobile"></i>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile</label>
+                            <div class="input-with-icon">
+                                <input type="text" required class="form-control" placeholder="User Mobile Number">
+                                <i class="ti-mobile"></i>
                             </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-with-icon">
-                                    <input type="password" class="form-control" placeholder="*******">
-                                    <i class="ti-unlock"></i>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-with-icon">
+                                <input type="password" class="form-control" placeholder="*******">
+                                <i class="ti-unlock"></i>
                             </div>
-                            
-                            <div class="form-group row">
-                                <div class="col-xl-4 col-lg-4 col-4">
-                                    <input id="admin" value="Male" class="checkbox-custom" name="gender" type="radio" checked>
-                                    <label for="admin" class="checkbox-custom-label">Male</label>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-4">
-                                    <input id="student"value="Female"  class="checkbox-custom" name="gender" type="radio" >
-                                    <label for="student" class="checkbox-custom-label">Female</label>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-4">
-                                    <input id="instructor"value="Transgender"  class="checkbox-custom" name="gender" type="radio">
-                                    <label for="instructor" class="checkbox-custom-label">Transgender</label>
-                                </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-xl-4 col-lg-4 col-4">
+                                <input id="admin" value="Male" class="checkbox-custom" name="gender" type="radio" checked>
+                                <label for="admin" class="checkbox-custom-label">Male</label>
                             </div>
-                            
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-md full-width theme-bg text-white">SignUp</button>
+                            <div class="col-xl-4 col-lg-4 col-4">
+                                <input id="student" value="Female" class="checkbox-custom" name="gender" type="radio">
+                                <label for="student" class="checkbox-custom-label">Female</label>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-xl-4 col-lg-4 col-4">
+                                <input id="instructor" value="Transgender" class="checkbox-custom" name="gender" type="radio">
+                                <label for="instructor" class="checkbox-custom-label">Transgender</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-md full-width theme-bg text-white">SignUp</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="crs_log__footer d-flex justify-content-between mt-0">
-                    <div class="fhg_45"><p class="musrt">Already have account? <a href="#" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#login" class="theme-cl">SignIn</a></p></div>
+            </div>
+            <div class="crs_log__footer d-flex justify-content-between mt-0">
+                <div class="fhg_45">
+                    <p class="musrt">Already have account? <a href="#" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#login" class="theme-cl">SignIn</a></p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Modal -->
+</div>
+<!-- End Modal -->
 
 
 
-    	<!-- Signup In Modal -->
-        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
-            <div class="modal-dialog modal-xl login-pop-form" role="document">
-                <div class="modal-content overli" id="loginmodal">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Login Your Account</h5>
-                        <button type="button" id="signin-close-btn" class="close" data-dismiss="modal" aria-label="Close">
+<!-- Signup In Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
+    <div class="modal-dialog modal-xl login-pop-form" role="document">
+        <div class="modal-content overli" id="loginmodal">
+            <div class="modal-header">
+                <h5 class="modal-title">Login Your Account</h5>
+                <button type="button" #closeModal id="signin-close-btn" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true"><i class="fas fa-times-circle"></i></span>
                         </button>
-                      </div>
-                    <div class="modal-body">
-                        <div class="login-form">
-                            <form>
-                            
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <div class="input-with-icon">
-                                        <input type="text" required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="loginPayload.username" placeholder="Email / Mobile Number">
-                                        <i class="ti-user"></i>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <div class="input-with-icon">
-                                        <input type="password" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="loginPayload.password" placeholder="*******">
-                                        <i class="ti-unlock"></i>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <button type="submit" (click)="userLogin()" class="btn btn-md full-width theme-bg text-white">Login</button>
-                                </div>
-                            </form>
+            </div>
+            <div class="modal-body">
+                <div class="login-form">
+                    <form>
+
+                        <div class="form-group">
+                            <label>Username</label>
+                            <div class="input-with-icon">
+                                <input type="text" required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="loginPayload.username" placeholder="Email / Mobile Number">
+                                <i class="ti-user"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="crs_log__footer d-flex justify-content-between mt-0">
-                        <div class="fhg_45"><p class="musrt">Don't have account? <a href="#" class="theme-cl" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#signup">SignUp</a></p></div>
-                        <div class="fhg_45"><p class="musrt"><a href="forgot.html" class="text-danger">Forgot Password?</a></p></div>
-                    </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-with-icon">
+                                <input type="password" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="loginPayload.password" placeholder="*******">
+                                <i class="ti-unlock"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" (click)="userLogin()" class="btn btn-md full-width theme-bg text-white">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="crs_log__footer d-flex justify-content-between mt-0">
+                <div class="fhg_45">
+                    <p class="musrt">Don't have account? <a href="#" class="theme-cl" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#signup">SignUp</a></p>
+                </div>
+                <div class="fhg_45">
+                    <p class="musrt"><a href="forgot.html" class="text-danger">Forgot Password?</a></p>
                 </div>
             </div>
         </div>
-        <!-- End Modal -->
-    
+    </div>
+</div>
+<!-- End Modal -->

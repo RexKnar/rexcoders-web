@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -12,42 +12,45 @@ import { LocalStorageService } from '../../services/local-storage.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
+
 export class HeaderComponent implements OnInit {
-@Input() header:any='home';
-userDetail:any;
-loginPayload:LoginPayload= new LoginPayload();
-  constructor(private store: Store<any>, private authService: AuthService, private localStorageService:LocalStorageService ) {
-     this.checkUser();
-   }
+  @ViewChild('closeModal') closeModal: ElementRef;
+  @Input() header: any = 'home';
+  userDetail: any;
+  loginPayload: LoginPayload = new LoginPayload();
+  constructor(private store: Store<any>, private authService: AuthService, private localStorageService: LocalStorageService) {
+    this.checkUser();
+  }
 
   ngOnInit(): void {
-       
+
   }
-checkUser()
-{
-  this.store.select('auth').subscribe((data:any)=>{
-    console.log(data);
-    this.userDetail =data;
-    sessionStorage.setItem('currentUser', JSON.stringify(this.userDetail));
-  });
-}
-  userLogin()
-  {
+
+  checkUser() {
+    this.store.select('auth').subscribe((data: any) => {
+      console.log(data);
+      this.userDetail = data;
+      sessionStorage.setItem('currentUser', JSON.stringify(this.userDetail));
+      this.closeModal.nativeElement.click();
+    });
+  }
+
+  userLogin() {
     console.log(this.loginPayload)
-this.authService.studentLogin(this.loginPayload).subscribe((data:any)=>{
+    this.authService.studentLogin(this.loginPayload).subscribe((data: any) => {
 
-  this.store.dispatch(new AuthActions.Login(data.data) );
-  this.checkUser();
+      this.store.dispatch(new AuthActions.Login(data.data));
+      this.checkUser();
 
-});
-    
-       
+    });
+
+
   }
 
-  logout()
-  {
+  logout() {
     this.localStorageService.clearLocalstorage();
-    this.store.dispatch(new AuthActions.Logout() );
+    this.store.dispatch(new AuthActions.Logout());
     this.checkUser();
   }
 
