@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl:"http://localhost:7700"
+  baseUrl:"http://api.rexcoders.in"
 };
 
 /*
