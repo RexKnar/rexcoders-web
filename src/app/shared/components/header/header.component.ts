@@ -3,7 +3,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import * as AuthActions from "src/app/store/auth/auth.action";
-import { LoginPayload } from '../../models/auth.model';
+import { LoginPayload, RegistrationPayLoad } from '../../models/auth.model';
 import { AuthService } from '../../services/auth.service';
 import { LocalStorageService } from '../../services/local-storage.service';
 
@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   @Input() header: any = 'home';
   userDetail: any;
   loginPayload: LoginPayload = new LoginPayload();
+  registrationPayload:  RegistrationPayLoad = new RegistrationPayLoad();
   constructor(private store: Store<any>, private authService: AuthService, private localStorageService: LocalStorageService) {
     this.checkUser();
   }
@@ -47,6 +48,16 @@ export class HeaderComponent implements OnInit {
 
 
   }
+  userSignup(){
+    console.log(this.registrationPayload)
+
+    this.authService.studentRegisteration(this.registrationPayload).subscribe((data: any) => {
+
+      console.log(data);
+      this.closeModal.nativeElement.click();
+    });
+  }
+
 
   logout() {
     this.localStorageService.clearLocalstorage();
