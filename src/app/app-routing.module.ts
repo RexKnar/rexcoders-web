@@ -20,6 +20,11 @@ const routes: Routes = [
     loadChildren:() => import('./about/about.module').then((module) => module.AboutModule),
   },
   {
+    path:'pages',
+    component:PagelayoutComponent,
+    loadChildren:() => import('./pages/pages.module').then((module) => module.PagesModule),
+  },
+  {
     path:'contact',
     component:PagelayoutComponent,
     loadChildren:() => import('./contact-us/contact-us.module').then((module) => module.ContactUsModule),

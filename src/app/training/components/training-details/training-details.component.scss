@@ -1,0 +1,25 @@
+.ti-coupon-btn{
+    position: absolute;
+    top: 48%;
+    transform: translateY(-50%);
+    right: 8px;
+    font-size: 15px;
+    color: #ffffff;
+    font-style: normal;
+    opacity: 0.4;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.coupon-box{
+    position: relative;
+}
+.coupon-response{
+    font-size: 12px;
+}
+.error{
+    color: red;
+}
+.success{
+    color:#00b05b
+}

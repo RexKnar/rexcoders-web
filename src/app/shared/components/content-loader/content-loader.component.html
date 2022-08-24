@@ -1,0 +1,22 @@
+<div class="col-12 align-items-center text-center mx-auto">
+    <!-- <h4 class="mx-auto">{{message}}</h4> -->
+    <ng-container *ngIf="type=='no-content'" >
+        <img src="../../../../assets//img/character/data-not-found.png" class="no-content-img">
+    </ng-container>
+    <ng-container *ngIf="type=='please-wait'" >
+        <img src="../../../../assets/img/loading.svg" class="no-content-img">
+    </ng-container>
+
+    <ng-container *ngIf="type=='success'" >
+        <img src="../../../../assets/img/success.svg" class="no-content-img">
+    </ng-container>
+
+    <ng-container *ngIf="type=='failed'" >
+        <img src="../../../../assets/img/error.svg" class="no-content-img">
+    </ng-container>
+
+    <ng-container *ngIf="type=='error'" >
+        <img src="../../../../assets/img/error.svg" class="no-content-img mx-auto">
+    </ng-container>
+   
+</div>

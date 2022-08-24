@@ -1,5 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule  } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,14 +11,18 @@ import { PagelayoutComponent } from './theme/pagelayout/pagelayout.component';
 
 import { StoreModule } from '@ngrx/store';
 import { AuthReducer } from './store/auth/auth.reducer';
-import { HttpClientModule } from '@angular/common/http';
+import { TrainingReducer } from './store/training/training.reducer';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LocalStorageService } from './shared/services/local-storage.service';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagelayoutComponent,
-    HomelayoutComponent
+    HomelayoutComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -26,13 +30,18 @@ import { LocalStorageService } from './shared/services/local-storage.service';
     SharedModule,
     NgbModule,
     SlickCarouselModule,
+    SweetAlert2Module.forRoot(),
     SharedModule,
     HttpClientModule,
-    StoreModule.forRoot({ auth: AuthReducer }),
-    
+    StoreModule.forRoot({ auth: AuthReducer, training: TrainingReducer }),
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  providers: [LocalStorageService,],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true,
+ },LocalStorageService,
+ Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

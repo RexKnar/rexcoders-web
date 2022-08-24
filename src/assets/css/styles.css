@@ -79,7 +79,7 @@ a:focus {
   text-decoration: none; }
 
 a.link {
-  color:#e42d29; }
+  color:#03b97c; }
 a.link:hover, a.link:focus, a:hover, a:focus {
     color:#03b97c; 
 }
@@ -94,9 +94,12 @@ a.text-warning:focus, a.text-warning:hover {
 }
 a.text-danger:focus, a.text-danger:hover {
     color:#f33066 !important;
-}
+} 
 a.white-link {
   color: #ffffff; 
+}
+.nav-menu .active{
+    color:#03b97c;  
 }
 a.white-link:hover, a.white-link:focus {
 	color: #263238;
@@ -530,7 +533,7 @@ html body .text-purple {
   color: #7460ee; }
 
 html body .text-primary {
-  color:#e42d29 !important; }
+  color:#03b97c !important; }
 
 html body .text-megna {
   color: #1dc8cd; }
@@ -539,7 +542,7 @@ html body .text-dark {
   color: #8d97ad; }
 
 html body .text-themecolor {
-  color:#e42d29; }
+  color:#03b97c; }
 
 /*------------------------ Global Settings: Lists ------------------*/
 .lists-4, .lists-3, .lists-2, .lists-1 {
@@ -563,7 +566,7 @@ html body .text-themecolor {
     display: block;
 }
 .lists-4.color li:before, .lists-3.color li:before, .lists-2.color li:before, .lists-1.color li:before{
-	color:#e42d29;
+	color:#03b97c;
 }
 .lists-1 li:before {
     content: "\e71b";
@@ -619,7 +622,7 @@ html body .text-themecolor {
 }
 /*-------------- GLobal Settings: Background Colors ----------------*/
 .bg-primary {
-  background-color:#e42d29 !important; }
+  background-color:#03b97c !important; }
 
 .bg-success {
   background-color: #27b737 !important; }
@@ -649,7 +652,7 @@ html body .bg-megna {
   background-color: #1dc8cd; }
 
 html body .bg-theme {
-  background-color:#e42d29; }
+  background-color:#03b97c; }
 
 html body .bg-inverse {
   background-color:#374158; }
@@ -954,7 +957,7 @@ border-radius: 50%;
 }
 
 .radio-custom:checked + .radio-custom-label:before {
-background:#e42d29;
+background:#03b97c;
 box-shadow: inset 0px 0px 0px 4px #fff;
 }
 .company-brands label{
@@ -1167,7 +1170,7 @@ label i.count{
 	color:#ffffff;
 }
 .color-heading .sec-heading h2{
-    color: #e42d29;	
+    color: #03b97c;	
 }
 .sec-heading p{
 	margin-bottom:5px;
@@ -1707,11 +1710,11 @@ nav a:hover {
     z-index: 19999
 }
 
-.no-scroll {
+/* .no-scroll {
     width: 100%;
     height: 100%;
     overflow: hidden
-}
+} */
 
 .nav-search {
     height: 70px;
@@ -1774,7 +1777,7 @@ nav a:hover {
 }
 
 .nav-search-button:hover .nav-search-icon {
-    color: #e42d29
+    color: #03b97c
 }
 
 .navigation-portrait .nav-search-button {
@@ -1861,7 +1864,7 @@ nav a:hover {
     color: #fff;
     text-align: center;
     border-radius: 4px;
-    background-color: #e42d29;
+    background-color: #03b97c;
     transition: opacity .3s
 }
 
@@ -2141,12 +2144,15 @@ nav a {
     font-size: 1.3em;
     font-weight: 900
 }
+.nav-menu .active{
+    color:#03b97c;
+}
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>li>a:focus,
-.navbar-default .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>li>a:hover { 
     color: #02B875;
     background-color: #fff
 }
@@ -2544,7 +2550,7 @@ span.expiration {
     color: #404656;
 }
 .header-transparent.dark-text .nav-menu>li>a:hover, .header-transparent.dark-text .nav-menu>li>a:focus {
-    color:#e42d29;
+    color:#03b97c;
 }
 .header-transparent .submenu-indicator-chevron {
     border-color: transparent #ffffff #ffffff transparent;
@@ -4286,8 +4292,8 @@ ul.lt_cr_list li i{
 }
 .blog-page .article_detail_wrapss .article_bottom_info .post-tags .list li a:hover {
     color: #ffffff;
-    background:#e42d29;
-    border-color:#e42d29;
+    background:#03b97c;
+    border-color:#03b97c;
 }
 .blog-page .article_detail_wrapss .article_bottom_info .post-share .list {
     padding: 0;
@@ -4332,7 +4338,7 @@ ul.lt_cr_list li i{
 }
 .single_article_pagination .article_pagination_center_grid a {
     font-size: 2.5rem;
-    color:#e42d29;
+    color:#03b97c;
 }
 .single_article_pagination .prev-post a, .single_article_pagination .next-post a {
     display: inline-block;
@@ -4473,7 +4479,7 @@ h3.pa-name {
 }
 .social-links li a:hover,
 .social-links li a:focus{
-	color:#e42d29;
+	color:#03b97c;
 }
 /*-------------- Sidebar -----------*/
 .single_widgets {
@@ -4721,7 +4727,7 @@ h3.pa-name {
     color: #ffffff;
 }
 ._smart_testimons_info span {
-    color: #e42d29;
+    color: #03b97c;
     font-size: 13px;
     font-weight: 600;
 }

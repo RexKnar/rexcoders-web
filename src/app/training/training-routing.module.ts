@@ -10,7 +10,7 @@ const routes: Routes = [
     component:TrainingListComponent
   },
   {
-    path:'training-details',
+    path:':slug',
     component:TrainingDetailsComponent
   }
 ];

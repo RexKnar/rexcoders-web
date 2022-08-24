@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavigationCancel, NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, NavigationCancel, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs';
 declare let $: any;
 
@@ -12,13 +13,23 @@ export class AppComponent {
   location: any;
     routerSubscription: any;
 
-    constructor(private router: Router) {
+    constructor(private router: Router,private activatedRoute: ActivatedRoute,  
+      private titleService: Title) {
     }
 
     ngOnInit(){
         this.recallJsFuntions();
+
+        // this.router.events.pipe(  
+        //   filter(event => event instanceof NavigationEnd),  
+        // ).subscribe(() => {  
+        //   const rt = this.getChild(this.activatedRoute);  
+        //   rt.data.subscribe(data => {  
+        //     console.log(data);  
+        //     this.titleService.setTitle(data.title)});  
+        // });
     }
-  title = 'rexcoders-web';
+
   recallJsFuntions() {
     this.router.events
     .subscribe((event) => {
@@ -60,5 +71,14 @@ export class AppComponent {
         }
         window.scrollTo(0, 0);
     });
+}
+
+getChild(activatedRoute: ActivatedRoute) {  
+  if (activatedRoute.firstChild) {  
+    return this.getChild(activatedRoute.firstChild);  
+  } else {  
+    return activatedRoute;  
+  }  
+
 }
 }

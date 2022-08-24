@@ -1,12 +1,66 @@
 
 <div class="container mt-5">
     <div class="row ">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="short_wraping crs_grid">
+                <div class="row m-0 align-items-center justify-content-between">
+                
+                    <div class="col-lg-4 col-md-5 col-sm-12  col-sm-6">
+                        <div class="shorting_pagination_laft">
+                            <div class="input-with-icon">
+                                <input type="text" (change)="trainingFilter()" class="form-control" [(ngModel)]="searchKey" placeholder="Search Your Cources">
+                                <i class="ti-search"></i>
+                           
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-8 col-md-7 col-sm-12 col-sm-6">
+                        <div class="dlks_152">
+                            <div class="shorting-right mr-2">
+                                <label>Filter:</label>
+                                
+                            </div>
+                            <div class="lmk_485">
+                                    <div class="input-with-icon">
+                                        <select id="domain"  (change)="trainingFilter()"  [(ngModel)]="domainKey" class="form-control" aria-placeholder="Domain" placeholder="Domain">
+                                            <option value="" selected="selected" > Choose a Domain</option>
+                                            <ng-container *ngFor="let domainDetail of domainList">
+                                                    <option [value]="domainDetail.domainId">{{domainDetail.domainName}}</option>
+                                            </ng-container>
+                                            
+                                        </select>
+                                        <!-- <i class="ti-search"></i> -->
+                                    </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <ng-container *ngFor="let trainingData of trainingDatas">
-        <div class="col col-lg-3">
-        <app-training-card  [cardData]="trainingData"></app-training-card>
+
+        <ng-container *ngIf="trainings.length">
+
+    <ng-container *ngFor="let trainingData of trainings">
+        <div class="col col-lg-4">
+            
+                <app-training-card  [cardData]="trainingData"></app-training-card>
+            
+            
+        
     </div>
     </ng-container>
+</ng-container>
+<ng-container *ngIf="!trainings.length ">
+    <div class="col-lg-12">
+      <app-content-loader
+        [type]="'no-content'" 
+        [message]="'OOPS! No content Found'"
+      ></app-content-loader>
+    </div>
+  </ng-container>
 
 </div>
 </div>

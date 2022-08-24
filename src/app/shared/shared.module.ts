@@ -14,6 +14,9 @@ import { WorkProcessComponent } from './components/work-process/work-process.com
 import { TrainingCardComponent } from './components/training-card/training-card.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ContentLoaderComponent } from './components/content-loader/content-loader.component';
+import { TrainingPipe } from './pipes/training.pipe';
 
 
 
@@ -30,12 +33,15 @@ import { FormsModule } from '@angular/forms';
     BreadcrumbComponent,
     WorkProcessComponent,
     TrainingCardComponent,
+    ContentLoaderComponent,
+    TrainingPipe
 
   ],
   imports: [
     CommonModule,
     SlickCarouselModule,
-    FormsModule
+    FormsModule,
+    RouterModule
     
   ],
   exports:[
@@ -49,7 +55,9 @@ import { FormsModule } from '@angular/forms';
     FeaturesComponent,
     BreadcrumbComponent,
     WorkProcessComponent,
-    TrainingCardComponent
+    TrainingCardComponent,
+    ContentLoaderComponent,
+    TrainingPipe
   ],
 })
 export class SharedModule { }
