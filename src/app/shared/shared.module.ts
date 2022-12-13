@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ContentLoaderComponent } from './components/content-loader/content-loader.component';
 import { TrainingPipe } from './pipes/training.pipe';
+import { PlacedCompaniesComponent } from './components/placed-companies/placed-companies.component';
 
 
 
@@ -34,7 +35,8 @@ import { TrainingPipe } from './pipes/training.pipe';
     WorkProcessComponent,
     TrainingCardComponent,
     ContentLoaderComponent,
-    TrainingPipe
+    TrainingPipe,
+    PlacedCompaniesComponent
 
   ],
   imports: [
@@ -42,7 +44,7 @@ import { TrainingPipe } from './pipes/training.pipe';
     SlickCarouselModule,
     FormsModule,
     RouterModule
-    
+
   ],
   exports:[
     HeaderComponent,
@@ -57,7 +59,8 @@ import { TrainingPipe } from './pipes/training.pipe';
     WorkProcessComponent,
     TrainingCardComponent,
     ContentLoaderComponent,
-    TrainingPipe
+    TrainingPipe,
+    PlacedCompaniesComponent
   ],
 })
 export class SharedModule { }
