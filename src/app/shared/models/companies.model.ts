@@ -1,7 +1,7 @@
 export class PlacedCompanies{
 
-    logoPath : any ;
+    logoPath : string ;
     companyName : string;
-    companyUrl : any;
+    companyUrl : string;
 
 }
