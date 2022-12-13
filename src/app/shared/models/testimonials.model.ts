@@ -1,8 +1,8 @@
 export class Testimonials{
-    personImage: any;
-    companyLogo: any;
-    personName : string;
-    designation : string;
-    description : string;
+    profileImage: string;
+    companyLogo: string;
+    studentName : string;
+    currentDesignation : string;
+    testimonial : string;
     rating : number;
 }
