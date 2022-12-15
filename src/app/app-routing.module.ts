@@ -14,6 +14,7 @@ const routes: Routes = [
     component:HomelayoutComponent,
     loadChildren:() => import('./home/home.module').then((module) => module.HomeModule),
   },
+  
   {
     path:'who-we-are',
     component:PagelayoutComponent,
@@ -33,6 +34,11 @@ const routes: Routes = [
     path:'trainings',
     component:PagelayoutComponent,
     loadChildren:() => import('./training/training.module').then((module) => module.TrainingModule),
+  },
+  {
+    path:'tutorial',
+    component:PagelayoutComponent,
+    loadChildren:()=>import('./tutorial/tutorial.module').then((module)=>module.TutorialModule)
   }
 ];
 
