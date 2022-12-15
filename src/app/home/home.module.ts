@@ -1,3 +1,4 @@
+import { PlacedCompaniesComponent } from './../shared/components/placed-companies/placed-companies.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +16,8 @@ import { HomeBannerComponent } from './components/home-banner/home-banner.compon
     HomeSliderComponent,
     HomeComponent,
     HomeCategoryComponent,
-    HomeBannerComponent
+    HomeBannerComponent,
+   
   ],
   imports: [
     CommonModule,

@@ -48,12 +48,10 @@
             
                 <app-training-card  [cardData]="trainingData"></app-training-card>
             
-            
-        
-    </div>
+        </div>
     </ng-container>
 </ng-container>
-<ng-container *ngIf="!trainings.length ">
+<ng-container *ngIf="!trainings.length">
     <div class="col-lg-12">
       <app-content-loader
         [type]="'no-content'" 
