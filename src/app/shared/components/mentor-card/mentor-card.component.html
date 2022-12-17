@@ -1,0 +1,19 @@
+<div class="lios_item">
+  <div class="crs_trt_grid shadow_none brd">
+
+    <div #mentorsDet (click)="getMentors(mentorsDetail)">
+      <div class="crs_trt_thumb">
+        <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{mentorsDetail.imagePath}}"
+            class="img-fluid" alt="" /></a>
+      </div>
+      <div class="crs_trt_caption large">
+        <div class="instructor_tag"><span>{{mentorsDetail.mentorDesignation}}</span></div>
+        <div class="instructor_title">
+          <h4><a href="instructor-detail.html">{{mentorsDetail.mentorName}}</a></h4>
+          <h6><a href="instructor-detail.html">{{mentorsDetail.companyName}}</a></h6>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
