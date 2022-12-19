@@ -1,17 +1,18 @@
 <!-- mentor card carousel -->
 
-<ngx-slick-carousel id="myCarousel1" class="carousel slide w-100 mt-5 mb-5" #slickModal="slick-carousel"
-  [config]="slideConfig">
+  <ngx-slick-carousel id="myCarousel1" class="carousel slide w-100 mt-5 mb-5" #slickModal="slick-carousel"
+    [config]="slideConfig">
 
-  <ng-container *ngFor="let mentors of mentorCardDetails">
+    <ng-container *ngFor="let mentors of mentorCardDetails">
 
-    <div ngxSlickItem class="slide" data-toggle="modal" data-target="#login1" id="loginTrigger" #loginTrigger>
-      <app-mentor-card [mentorsDetail]="mentors" (getMentor)="getMentor($event)"></app-mentor-card>
-    </div>
+      <div ngxSlickItem class="slide" data-toggle="modal" data-target="#login1" id="loginTrigger" #loginTrigger>
 
-  </ng-container>
+        <app-mentor-card [mentorsDetail]="mentors" (getMentor)="getMentor($event)"></app-mentor-card>
+      </div>
 
-</ngx-slick-carousel>
+    </ng-container>
+
+  </ngx-slick-carousel>
 
 <!-- mentor card modal -->
 
@@ -22,20 +23,25 @@
 
       <div *ngIf="mentor">
         <div class="modal-header">
-          <div>
-
-            <h5 class="modal-title">{{mentor.mentorName}}</h5>
-
-            <h6><a href="instructor-detail.html">{{mentor.mentorDesignation}}</a></h6>
-          </div>
+          <h4 class="mentor-details">Mentor Details</h4>
           <button type="button" #closeMentorModal id="mentor-close-btn" class="close" data-dismiss="modal"
             aria-label="Close">
             <span aria-hidden="true"><i class="fas fa-times-circle"></i></span>
           </button>
         </div>
         <div class="modal-body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quaerat tenetur odit animi nemo atque quod,
-            quo eius ullam, nisi dolor officiis vitae possimus quas qui, delectus aperiam placeat! Molestias!</p>
+
+          <div class="d-flex">
+            <div class="crs_trt_thumb">
+              <a href="instructor-detail.html" class="crs_trt_thum_link"><img src="{{mentor.imagePath}}"
+                  class="img-fluid " alt="" /></a>
+            </div>
+            <div class="instructor_title m-2 justify-content-center;">
+              <h4><a href="instructor-detail.html">{{mentor.mentorName}}</a></h4>
+              <h6><a href="instructor-detail.html">{{mentor.companyName}}</a></h6>
+            </div>
+          </div>
+           <div innerHTML="{{mentor.description }}" class="mt-3"></div>
         </div>
       </div>
 
