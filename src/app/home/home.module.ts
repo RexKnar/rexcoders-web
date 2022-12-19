@@ -9,21 +9,22 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeCategoryComponent } from './components/home-category/home-category.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HomeBannerComponent } from './components/home-banner/home-banner.component';
+// import { SharedModule_1 as SharedModule } from "../shared/shared.module";
 
 
 @NgModule({
-  declarations: [
-    HomeSliderComponent,
-    HomeComponent,
-    HomeCategoryComponent,
-    HomeBannerComponent,
-   
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    SharedModule,
-    SlickCarouselModule
-  ]
+    declarations: [
+        HomeSliderComponent,
+        HomeComponent,
+        HomeCategoryComponent,
+        HomeBannerComponent,
+    ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        SharedModule,
+        SlickCarouselModule,
+        // SharedModule_1
+    ]
 })
 export class HomeModule { }

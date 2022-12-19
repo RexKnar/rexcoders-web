@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
-import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { TestimonialCardComponent } from './components/testimonial-card/testimonial-card.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { TagCardComponent } from './components/tag-card/tag-card.component';
 import { AboutInfoComponent } from './components/about-info/about-info.component';
@@ -20,6 +20,7 @@ import { TrainingPipe } from './pipes/training.pipe';
 import { PlacedCompaniesComponent } from './components/placed-companies/placed-companies.component';
 import { MentorCardComponent } from './components/mentor-card/mentor-card.component';
 import { MentorListComponent } from './components/mentor-list/mentor-list.component';
+import { TestimonialListComponent } from './components/testimonial-list/testimonial-list.component';
 
 
 
@@ -30,7 +31,7 @@ import { MentorListComponent } from './components/mentor-list/mentor-list.compon
     HeaderComponent,
     FooterComponent,
     CourseCardComponent,
-    TestimonialsComponent,
+    TestimonialCardComponent,
     TagCardComponent,
     AboutInfoComponent,
     CounselingComponent,
@@ -42,7 +43,8 @@ import { MentorListComponent } from './components/mentor-list/mentor-list.compon
     TrainingPipe,
     PlacedCompaniesComponent,
     MentorCardComponent,
-    MentorListComponent
+    MentorListComponent,
+    TestimonialListComponent
 
 
   ],
@@ -57,7 +59,7 @@ import { MentorListComponent } from './components/mentor-list/mentor-list.compon
     HeaderComponent,
     FooterComponent,
     CourseCardComponent,
-    TestimonialsComponent,
+    TestimonialCardComponent,
     TagCardComponent,
     AboutInfoComponent,
     CounselingComponent,
@@ -70,6 +72,7 @@ import { MentorListComponent } from './components/mentor-list/mentor-list.compon
     PlacedCompaniesComponent,
     MentorCardComponent,
    MentorListComponent,
+   TestimonialListComponent
 
   ],
 })

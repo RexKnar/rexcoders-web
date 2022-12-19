@@ -5,4 +5,5 @@ export class MentorsDetails{
     companyLogo :string ;
     companyName :string ;
     loginId : number;
+    description : string;
 }
