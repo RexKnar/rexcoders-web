@@ -18,6 +18,10 @@ import { RouterModule } from '@angular/router';
 import { ContentLoaderComponent } from './components/content-loader/content-loader.component';
 import { TrainingPipe } from './pipes/training.pipe';
 import { PlacedCompaniesComponent } from './components/placed-companies/placed-companies.component';
+import { MentorCardComponent } from './components/mentor-card/mentor-card.component';
+import { MentorListComponent } from './components/mentor-list/mentor-list.component';
+
+
 
 
 
@@ -36,7 +40,10 @@ import { PlacedCompaniesComponent } from './components/placed-companies/placed-c
     TrainingCardComponent,
     ContentLoaderComponent,
     TrainingPipe,
-    PlacedCompaniesComponent
+    PlacedCompaniesComponent,
+    MentorCardComponent,
+    MentorListComponent
+
 
   ],
   imports: [
@@ -60,7 +67,10 @@ import { PlacedCompaniesComponent } from './components/placed-companies/placed-c
     TrainingCardComponent,
     ContentLoaderComponent,
     TrainingPipe,
-    PlacedCompaniesComponent
+    PlacedCompaniesComponent,
+    MentorCardComponent,
+   MentorListComponent,
+
   ],
 })
 export class SharedModule { }

@@ -1,64 +1,47 @@
 <section class="gray">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-7 col-md-8">
-        <div class="sec-heading center">
-          <h2>Our Students <span class="theme-cl">Reviews</span></h2>
-        </div>
-      </div>
-    </div>
-    <div class="row align-items-center justify-content-between mb-5">
-      <ngx-slick-carousel
-        id="myCarousel"
-        class="carousel slide w-100 mt-5 mb-5"
-        #slickModal="slick-carousel"
-        [config]="slideConfig"
-      >
-        <div
-          ngxSlickItem
-          class="slide"
-          *ngFor="let testimonial of testimonialsList"
-        >
-          <div class="single_items lios_item">
-            <div class="_testimonial_wrios shadow_none">
-              <div class="_testimonial_flex">
-                <div class="_testimonial_flex_first">
-                  <div class="_tsl_flex_thumb">
-                    <img
-                      src="{{ testimonial.profileImage }}"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="_tsl_flex_capst">
-                    <h5>{{ testimonial.studentName }}</h5>
-                    <div class="_ovr_posts">
-                      <span>{{ testimonial.currentDesignation }}</span>
-                    </div>
-                    <div class="_ovr_rates">
-                      <span><i class="fa fa-star"></i></span
-                      >{{ testimonial.rating }}
-                    </div>
-                  </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-8">
+                <div class="sec-heading center">
+                    <h2>Our Students <span class="theme-cl">Reviews</span></h2>
                 </div>
-                <div class="_testimonial_flex_first_last">
-                  <div class="_tsl_flex_thumb">
-                    <img
-                      src="{{ testimonial.companyLogo }}"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="facts-detail">
-                <p>{{ testimonial.testimonial }}</p>
-              </div>
             </div>
-          </div>
         </div>
-      </ngx-slick-carousel>
+        <div class="row align-items-center justify-content-between mb-5">
+            <ngx-slick-carousel id="myCarousel" class="carousel slide w-100 mt-5 mb-5" #slickModal="slick-carousel"
+                [config]="slideConfig">
+                <div ngxSlickItem class="slide" *ngFor="let testimonial of testimonialsList">
+                    <div class="single_items lios_item">
+                        <div class="_testimonial_wrios shadow_none">
+                            <div class="_testimonial_flex">
+                                <div class="_testimonial_flex_first">
+                                    <div class="_tsl_flex_thumb">
+                                        <img src="{{ testimonial.profileImage }}" class="img-fluid" alt="" />
+                                    </div>
+                                    <div class="_tsl_flex_capst">
+                                        <h5>{{ testimonial.studentName }}</h5>
+                                        <div class="_ovr_posts">
+                                            <span>{{ testimonial.currentDesignation }}</span>
+                                        </div>
+                                        <div class="_ovr_rates">
+                                            <span><i class="fa fa-star"></i></span>{{ testimonial.rating }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="_testimonial_flex_first_last">
+                                    <div class="_tsl_flex_thumb">
+                                        <img src="{{ testimonial.companyLogo }}" class="img-fluid" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="facts-detail">
+                                <p>{{ testimonial.testimonial }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
     </div>
-  </div>
 </section>
