@@ -40,26 +40,29 @@
           </button>
         </div>
         <div class="modal-body">
-
-          <div class="d-flex">
-            <div class="crs_trt_thumb">
-              <a class="crs_trt_thum_link"><img src="{{testimonial.profileImage}}" class="img-fluid " alt="" /></a>
+          <div class="_testimonial_flex">
+            <div class="_testimonial_flex_first">
+              <div class="_tsl_flex_thumb">
+                <img src="{{ testimonial.profileImage }}" class="img-fluid" alt="" />
+              </div>
+              <div class="_tsl_flex_capst">
+                <h5>{{ testimonial.studentName }}</h5>
+                <div class="_ovr_posts">
+                  <span>{{ testimonial.currentDesignation}}</span>
+                </div>
+                <div class="_ovr_rates">
+                  <span><i class="fa fa-star"></i></span>{{ testimonial.rating }}
+                </div>
+              </div>
             </div>
-            <div class="instructor_title m-2 justify-content-center;">
-              <h4><a>{{testimonial.studentName}}</a></h4>
-              <h6><a>{{testimonial.currentDesignation}} </a></h6>
-              <h6 class="_ovr_rates">
-                <span><i class="fa fa-star"></i></span>{{ testimonial.rating }}
-              </h6>
-
-            </div>
-            <div class="img-fluid">
-              <img src="{{testimonial.companyLogo}}" alt="" class="company-logo ">
+            <div class="_testimonial_flex_first_last">
+              <div class="_tsl_flex_thumb">
+                <img src="{{ testimonial.companyLogo }}" class="img-fluid" alt="" />
+              </div>
             </div>
           </div>
-
           <div>
-            <p innerHTML="{{testimonial.testimonial}}" class="testimonial-desc"></p>
+            <p innerHTML="{{testimonial.testimonial}}" class="testimonial-desc mt-3"></p>
           </div>
         </div>
       </div>

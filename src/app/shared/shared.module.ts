@@ -22,10 +22,6 @@ import { MentorCardComponent } from './components/mentor-card/mentor-card.compon
 import { MentorListComponent } from './components/mentor-list/mentor-list.component';
 import { TestimonialListComponent } from './components/testimonial-list/testimonial-list.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -71,8 +67,8 @@ import { TestimonialListComponent } from './components/testimonial-list/testimon
     TrainingPipe,
     PlacedCompaniesComponent,
     MentorCardComponent,
-   MentorListComponent,
-   TestimonialListComponent
+    MentorListComponent,
+    TestimonialListComponent
 
   ],
 })
