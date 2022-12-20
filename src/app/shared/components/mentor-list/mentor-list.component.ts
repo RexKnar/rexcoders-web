@@ -7,11 +7,11 @@ import { MentorsDetails } from '../../models/mentors.model';
   styleUrls: ['./mentor-list.component.scss']
 })
 export class MentorListComponent implements OnInit {
-  details:any;
+  
   mentor:any;
 
 
-  mentorCardDetails : any  = [
+  mentorCardDetails : MentorsDetails[]  = [
     {
     imagePath : "assets/img/t-1.png",
     mentorName : "Susan D. Murphy",

@@ -1,0 +1,72 @@
+<section class="gray">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-8">
+        <div class="sec-heading center">
+          <h2>Our Students <span class="theme-cl">Reviews</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center justify-content-between mb-5">
+      <ngx-slick-carousel id="myCarousel" class="carousel slide w-100 mt-5 mb-5" #slickModal="slick-carousel"
+        [config]="slideConfig">
+        <div ngxSlickItem class="slide" data-toggle="modal" data-target="#testimonial" id="testimonialTrigger"
+          #testimonialTrigger *ngFor="let testimonial of testimonialsList">
+
+          <app-testimonial-card [testimonialDetails]="testimonial"
+            (getTestimonial)="getTestimonial($event)"></app-testimonial-card>
+
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+</section>
+
+
+<!-- modal -->
+
+
+<div class="modal fade" id="testimonial" tabindex="1" style="z-index: 9999; overflow: scroll;" role="dialog"
+  aria-labelledby="testimonialmodal" aria-hidden="true">
+  <div class="modal-dialog modal-xl testimonial-pop-form" role="document">
+    <div class="modal-content overli" id="testimonialmodal">
+
+      <div *ngIf="testimonial">
+        <div class="modal-header">
+          <h4 class="testimonial-details">Student Review</h4>
+          <button type="button" #closetestimonialModal id="testimonial-close-btn" class="close" data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true"><i class="fas fa-times-circle"></i></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="_testimonial_flex">
+            <div class="_testimonial_flex_first">
+              <div class="_tsl_flex_thumb">
+                <img src="{{ testimonial.profileImage }}" class="img-fluid" alt="" />
+              </div>
+              <div class="_tsl_flex_capst">
+                <h5>{{ testimonial.studentName }}</h5>
+                <div class="_ovr_posts">
+                  <span>{{ testimonial.currentDesignation}}</span>
+                </div>
+                <div class="_ovr_rates">
+                  <span><i class="fa fa-star"></i></span>{{ testimonial.rating }}
+                </div>
+              </div>
+            </div>
+            <div class="_testimonial_flex_first_last">
+              <div class="_tsl_flex_thumb">
+                <img src="{{ testimonial.companyLogo }}" class="img-fluid" alt="" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <p innerHTML="{{testimonial.testimonial}}" class="testimonial-desc mt-3"></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

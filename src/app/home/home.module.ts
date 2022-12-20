@@ -1,4 +1,4 @@
-import { PlacedCompaniesComponent } from './../shared/components/placed-companies/placed-companies.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,19 +11,20 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HomeBannerComponent } from './components/home-banner/home-banner.component';
 
 
+
 @NgModule({
-  declarations: [
-    HomeSliderComponent,
-    HomeComponent,
-    HomeCategoryComponent,
-    HomeBannerComponent,
-   
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    SharedModule,
-    SlickCarouselModule
-  ]
+    declarations: [
+        HomeSliderComponent,
+        HomeComponent,
+        HomeCategoryComponent,
+        HomeBannerComponent,
+    ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        SharedModule,
+        SlickCarouselModule,
+
+    ]
 })
 export class HomeModule { }
