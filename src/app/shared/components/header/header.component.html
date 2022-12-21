@@ -29,7 +29,7 @@
                     <li><a class="cursor-pointer" routerLink="/home" routerLinkActive="active">Lets Go <i class="fa fa-home"></i></a></li>
                     <li><a class="cursor-pointer" routerLink="/who-we-are" routerLinkActive="active">Who We Are?</a></li>
                     <li><a class="cursor-pointer" routerLink="/trainings" routerLinkActive="active">Trainings</a></li>
-                    <!-- <li><a href="dashboard.html">Blog</a></li> -->
+                    
                     <li><a class="cursor-pointer" routerLink="/contact" routerLinkActive="active">Say Hello!</a></li>
                     <li><a class="cursor-pointer" routerLink="/tutorial" routerLinkActive="active">Lets Learn</a></li>
 
@@ -107,7 +107,7 @@
                                         <option *ngFor="let state of stateList" [ngValue]="state.stateId"> {{state.stateName}}</option>
                                     </ng-container>
                                 </select>
-                                <!-- <input type="text" required class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="registrationPayload.state" placeholder="User State"> -->
+
                                 <i class="ti-mobile"></i>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" (click)="userSignup()" class="btn btn-md full-width theme-bg text-white">SignUp</button>
+                            <button type="submit" (click)="userSignup()" [disabled]="this.loader==true" class="btn btn-md full-width theme-bg text-white">SignUp <i class="fas fa-spinner fa-spin" *ngIf="this.loader"></i></button>
                         </div>
                     </form>
                 </div>
@@ -184,7 +184,10 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" (click)="userLogin()" class="btn btn-md full-width theme-bg text-white">Login</button>
+                            <button type="submit" (click)="userLogin()" [disabled]="this.loader==true" class="btn btn-md full-width theme-bg text-white">Login <i class="fas fa-spinner fa-spin" *ngIf="this.loader"></i></button>
+
+
+
                         </div>
                     </form>
                 </div>
@@ -242,7 +245,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" (click)="bookConsultation()" class="btn btn-md full-width theme-bg text-white">Book Now</button>
+                            <button type="submit" (click)="bookConsultation()" [disabled]="this.loader==true" class="btn btn-md full-width theme-bg text-white">Book Now <i class="fas fa-spinner fa-spin" *ngIf="this.loader"></i></button>
                         </div>
                     </form>
                 </div>

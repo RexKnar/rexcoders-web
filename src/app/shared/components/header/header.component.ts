@@ -31,9 +31,10 @@ export class HeaderComponent implements OnInit {
   isSignup:boolean=false;
   stateList:any;
   loginModal:HTMLElement;
+  loader:boolean=false;
   constructor(
-    private store: Store<any>, 
-    private authService: AuthService, 
+    private store: Store<any>,
+    private authService: AuthService,
     private localStorageService: LocalStorageService,
     private _commonService: CommonService,
     private _route: ActivatedRoute,
@@ -56,10 +57,10 @@ export class HeaderComponent implements OnInit {
 
   checkUser() {
     this.store.select('auth').subscribe((data: any) => {
-      
+
       this.userDetail = data;
       sessionStorage.setItem('currentUser', JSON.stringify(this.userDetail));
-      
+
       if(this.isCheckout && this.userDetail.token)
       {
         document.getElementById("checkoutOpenBtn").click();
@@ -68,31 +69,34 @@ export class HeaderComponent implements OnInit {
   }
 
   userLogin() {
+
+    this.loader=true;
     this.authService.studentLogin(this.loginPayload).subscribe((data: any) => {
 
       this.store.dispatch(new AuthActions.Login(data.data));
       this.closeSigninModal.nativeElement.click();
       this.checkUser();
-
-    });
+      this.loader=false;
+   });
 
 
   }
   userSignup(){
+    this.loader=true;
     this.authService.studentRegisteration(this.registrationPayload).subscribe((data: any) => {
       const queryParams: Params = { signup: true };
 
       this._router.navigate(
-        [], 
+        [],
         {
           relativeTo: this._route,
-          queryParams: queryParams, 
+          queryParams: queryParams,
           queryParamsHandling: 'merge', // remove to replace all query params by provided
         });
       this.closeSignupModal.nativeElement.click();
       this.loginModal= document.getElementById('loginTrigger') as HTMLElement;
       this.loginModal.click();
-
+      this.loader=false;
 
 
 
@@ -101,10 +105,12 @@ export class HeaderComponent implements OnInit {
 
 bookConsultation()
 {
+  this.loader=true;
   if(this.oneToOnePayload.studentName && this.oneToOnePayload.studentEmail && this.oneToOnePayload.studentMobile)
   {
   this._consultationService.bookConsultationt(this.oneToOnePayload).subscribe((data:any)=>{
     this.close1to1Modal.nativeElement.click();
+    this.loader=false;
     Swal.fire({
       icon: 'success',
       title: 'Successfully Booked ',
@@ -118,7 +124,7 @@ bookConsultation()
       text: 'Something went wrong!'
     })
   })
-  
+
 
 }
 else{
@@ -128,12 +134,10 @@ else{
     text: 'Please fill all the fields!'
   })
 }
+
 }
   logout() {
     this.localStorageService.clearLocalstorage();
     this.store.dispatch(new AuthActions.Logout());
   }
-
-
-
 }
