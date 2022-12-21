@@ -29,7 +29,7 @@
                     <li><a class="cursor-pointer" routerLink="/home" routerLinkActive="active">Lets Go <i class="fa fa-home"></i></a></li>
                     <li><a class="cursor-pointer" routerLink="/who-we-are" routerLinkActive="active">Who We Are?</a></li>
                     <li><a class="cursor-pointer" routerLink="/trainings" routerLinkActive="active">Trainings</a></li>
-                    
+
                     <li><a class="cursor-pointer" routerLink="/contact" routerLinkActive="active">Say Hello!</a></li>
                     <li><a class="cursor-pointer" routerLink="/tutorial" routerLinkActive="active">Lets Learn</a></li>
 
@@ -135,7 +135,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" (click)="userSignup()" [disabled]="this.loader==true" class="btn btn-md full-width theme-bg text-white">SignUp <i class="fas fa-spinner fa-spin" *ngIf="this.loader"></i></button>
+                            <button type="submit" (click)="userSignup()" [disabled]="signUpLoader" class="btn btn-md full-width theme-bg text-white">SignUp <i class="fas fa-spinner fa-spin" *ngIf="this.signUpLoader"></i></button>
                         </div>
                     </form>
                 </div>
@@ -184,7 +184,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" (click)="userLogin()" [disabled]="this.loader==true" class="btn btn-md full-width theme-bg text-white">Login <i class="fas fa-spinner fa-spin" *ngIf="this.loader"></i></button>
+                            <button type="submit" (click)="userLogin()" [disabled]="signInLoader" class="btn btn-md full-width theme-bg text-white">Login <i class="fas fa-spinner fa-spin" *ngIf="this.signInLoader"></i></button>
 
 
 
@@ -245,7 +245,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" (click)="bookConsultation()" [disabled]="this.loader==true" class="btn btn-md full-width theme-bg text-white">Book Now <i class="fas fa-spinner fa-spin" *ngIf="this.loader"></i></button>
+                            <button type="submit" (click)="bookConsultation()" [disabled]="bookNowLoader" class="btn btn-md full-width theme-bg text-white">Book Now <i class="fas fa-spinner fa-spin" *ngIf="this.bookNowLoader"></i></button>
                         </div>
                     </form>
                 </div>

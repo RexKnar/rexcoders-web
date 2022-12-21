@@ -31,7 +31,10 @@ export class HeaderComponent implements OnInit {
   isSignup:boolean=false;
   stateList:any;
   loginModal:HTMLElement;
-  loader:boolean=false;
+  // loader:boolean=false;
+  signInLoader:boolean=false;
+  signUpLoader:boolean=false;
+  bookNowLoader:boolean=false;
   constructor(
     private store: Store<any>,
     private authService: AuthService,
@@ -70,19 +73,19 @@ export class HeaderComponent implements OnInit {
 
   userLogin() {
 
-    this.loader=true;
+    this.signInLoader=true;
     this.authService.studentLogin(this.loginPayload).subscribe((data: any) => {
 
       this.store.dispatch(new AuthActions.Login(data.data));
       this.closeSigninModal.nativeElement.click();
       this.checkUser();
-      this.loader=false;
+      this.signInLoader=false;
    });
 
 
   }
   userSignup(){
-    this.loader=true;
+    this.signUpLoader=true;
     this.authService.studentRegisteration(this.registrationPayload).subscribe((data: any) => {
       const queryParams: Params = { signup: true };
 
@@ -96,26 +99,28 @@ export class HeaderComponent implements OnInit {
       this.closeSignupModal.nativeElement.click();
       this.loginModal= document.getElementById('loginTrigger') as HTMLElement;
       this.loginModal.click();
-      this.loader=false;
+      this.signUpLoader=false;
 
 
 
     });
+
   }
 
 bookConsultation()
 {
-  this.loader=true;
+  this.bookNowLoader=true;
   if(this.oneToOnePayload.studentName && this.oneToOnePayload.studentEmail && this.oneToOnePayload.studentMobile)
   {
   this._consultationService.bookConsultationt(this.oneToOnePayload).subscribe((data:any)=>{
     this.close1to1Modal.nativeElement.click();
-    this.loader=false;
+    this.bookNowLoader=false;
     Swal.fire({
       icon: 'success',
       title: 'Successfully Booked ',
       text: 'Our experts will contact you ASAP'
     })
+
   },
   (error:any)=>{
     Swal.fire({
