@@ -1,1 +1,40 @@
-<p>community-faq works!</p>
+<section>
+  <div class="container">
+    <h4>FQA's</h4>
+    <div class="row justify-content-start">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div id="accordionExample" class="accordion">
+          <div class="card" *ngFor="let fqa of community; index as i">
+            <div
+              id="headingOne{{ i }}"
+              class="card-header bg-white shadow-sm border-0"
+            >
+              <h6 class="mb-0 accordion_title">
+                <a
+                  href="#"
+                  data-toggle="collapse"
+                  [attr.data-target]="'#collapseOne' + i"
+                  aria-expanded="true"
+                  [attr.aria-controls]="'collapseOne' + i"
+                  class="d-block position-relative text-dark collapsible-link py-2"
+                  >{{ fqa.question }}</a
+                >
+              </h6>
+            </div>
+            <div
+              id="collapseOne{{ i }}"
+              [attr.aria-labelledby]="'headingOne' + i"
+              data-parent="#accordionExample"
+              class="collapse show"
+            >
+              <div
+                class="card-body pl-3 pr-3 pt-0"
+                [innerHTML]="fqa.answer"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

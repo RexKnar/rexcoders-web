@@ -39,6 +39,11 @@ const routes: Routes = [
     path:'tutorial',
     component:PagelayoutComponent,
     loadChildren:()=>import('./tutorial/tutorial.module').then((module)=>module.TutorialModule)
+  },
+  {
+    path:'community',
+    component:PagelayoutComponent,
+    loadChildren:()=>import('./community/community.module').then((module)=>module.CommunityModule)
   }
 ];
 
