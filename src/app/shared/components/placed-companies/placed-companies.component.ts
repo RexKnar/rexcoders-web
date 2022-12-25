@@ -11,49 +11,25 @@ export class PlacedCompaniesComponent implements OnInit {
   companyList: PlacedCompanies[] = [
     {
       companyName: 'coursera',
-      logoPath: 'assets/img/c1.png',
+      logoPath: 'assets/img/rexknar-logo.png',
       companyUrl: '',
     },
     {
       companyName: 'upwork',
-      logoPath: 'assets/img/c2.png',
+      logoPath: 'assets/img/Infosys-logo.png',
       companyUrl: '',
     },
     {
       companyName: 'slack',
-      logoPath: 'assets/img/c3.png',
+      logoPath: 'assets/img/fakeeh-logo.png',
       companyUrl: '',
     },
     {
       companyName: 'skillshare',
-      logoPath: 'assets/img/c4.png',
+      logoPath: 'assets/img/smart-tech-logo.png',
       companyUrl: '',
     },
-    {
-      companyName: 'udemy',
-      logoPath: 'assets/img/c5.png',
-      companyUrl: '',
-    },
-    {
-      companyName: 'unacademy',
-      logoPath: 'assets/img/c6.png',
-      companyUrl: '',
-    },
-    {
-      companyName: 'udacity',
-      logoPath: 'assets/img/c7.png',
-      companyUrl: '',
-    },
-    {
-      companyName: 'LearnUp',
-      logoPath: 'assets/img/c8.png',
-      companyUrl: '',
-    },
-    {
-      companyName: 'Khan Academy',
-      logoPath: 'assets/img/c9.png',
-      companyUrl: '',
-    },
+
   ];
 
   constructor() {}
