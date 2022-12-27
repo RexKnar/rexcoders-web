@@ -6,6 +6,7 @@ import { CommunityComponent } from './community.component';
 import { CommunityFaqComponent } from './components/community-faq/community-faq.component';
 import { CommunityGuidelinesComponent } from './components/community-guidelines/community-guidelines.component';
 import { HomeComponent } from './components/home/home.component';
+import { CommunityLandingAreaComponent } from './components/community-landing-area/community-landing-area.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HomeComponent } from './components/home/home.component';
     CommunityComponent,
     CommunityFaqComponent,
     CommunityGuidelinesComponent,
-    HomeComponent
+    HomeComponent,
+    CommunityLandingAreaComponent
   ],
   imports: [
     CommonModule,
