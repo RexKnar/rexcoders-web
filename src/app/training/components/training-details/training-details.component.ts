@@ -112,23 +112,25 @@ this.trainingType=this.trainingTypeDetail;
   }
   chooseBatch()
   {
-    
-    switch(this.trainingBatch)
+    switch(this.trainingTime)
     {
       case '1':
-          this.batchDetail='Morning(9am-11am)';
+          this.batchDetail='Morning(9am-10am)';
           break;
       case '2':
-          this.batchDetail='Afternoon(2pm-4pm)';
+          this.batchDetail='Afternoon(2pm-3pm)';
           break;
       case '3':
-          this.batchDetail='Evening(5pm-7pm)';
+          this.batchDetail='Afternoon(5pm-6pm)';
           break;
       case '4':
-          this.batchDetail='Night(9:00pm-10:30pm)';
+          this.batchDetail='Full time(10:00am-05:00pm)';
+          break;
+      case '5':
+          this.batchDetail='Part time(04:00pm-07:00pm)';
           break;
       default:
-          this.batchDetail='MChoose a Batch';
+          this.batchDetail='Choose a Batch';
           break;
         
         
